@@ -51,7 +51,7 @@ const isLastQuestion=currentIndex!==questions.length-1
             </p>
             ))}
         {isLastQuestion ? <button onClick={next}style={{padding:'10px'}}>Next</button>
-        : <div style={{fontSize:'50px'}}>Your Score is : {score*100/10}% <br/> <button onClick={restart} style={{padding:'10px', marginTop:'50px'}}>Restart</button></div>}
+        : <div style={{fontSize:'50px'}}>Your Score is : {score*100/questions.length}% <br/> <button onClick={restart} style={{padding:'10px', marginTop:'50px'}}>Restart</button></div>}
         
         
       </header>
