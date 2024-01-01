@@ -47,3 +47,8 @@
   align-items: center;
   margin: auto;
 }
+.btn{
+  padding: 8px 14px;
+  border-radius: 10px;
+  filter: drop-shadow(2px 2px 5px rgb(181, 218, 250));
+  border: 1px solid skyblue;}

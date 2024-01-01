@@ -7,7 +7,9 @@ function App() {
   const [questions,setQuestions]=useState([])
   const [currentIndex,setCurrentIndex]=useState(0)
   const [score,setScore]=useState(0)
+  const [toggle, settoggle] = useState(false);
   const [answered, setAnswered] = useState(false);
+  const [selectedOption, setselectedOption] = useState(null)
 
   useEffect(function(){
     qustionsFromApi()
@@ -28,12 +30,16 @@ function restart(){
     setScore(0)
     setAnswered(false)
 }
+function start() {
+  settoggle(true)
+}
 function checkAnswer(option){
+  setselectedOption(option)
   if (option === questions[currentIndex].correct_answer) {
     setScore(score + 1);
   }
 }
-const isLastQuestion=currentIndex!==questions.length-1
+const isLastQuestion=currentIndex!==questions.length
 
   if(!questions.length){
     return <div className='loder'><img src={logo} className="App-logo" alt="logo" /> </div>
@@ -44,16 +50,32 @@ const isLastQuestion=currentIndex!==questions.length-1
       <header className="App-header">
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <h1 className='main'>Quiz App</h1>
-        <h4>{currentIndex + 1}) {questions[currentIndex].question}</h4>
-        {questions[currentIndex].options.map((option, index) => (
-              <p><input type='radio' key={index} onClick={() => checkAnswer(option)} name='loop'/>
-              {option}
-            </p>
-            ))}
-        {isLastQuestion ? <button onClick={next}style={{padding:'10px'}}>Next</button>
-        : <div style={{fontSize:'50px'}}>Your Score is : {score*100/questions.length}% <br/> <button onClick={restart} style={{padding:'10px', marginTop:'50px'}}>Restart</button></div>}
-        
-        
+        {!toggle ? (<button onClick={start}>Start Quiz</button>
+        ) : (
+          <div className="quiz">
+            {isLastQuestion ? (
+              <div className="question-div">
+                <h2>
+                  Q{currentIndex + 1}: {questions[currentIndex].question}
+                </h2>
+                {questions[currentIndex].options.map(function (option) {
+                  return (
+                    <p>
+                      <input type="radio" name='options' checked={selectedOption === option} onClick={() => checkAnswer(option)} />
+                      {option}
+                    </p>
+                  );
+                })}
+                <button className='btn' onClick={next}>Next</button>
+              </div>
+            ) : (
+              <div>
+                <p>Your Score Is {(score * 100) / questions.length}%</p>
+                <button className='btn' onClick={restart}>Restart</button>
+              </div>
+            )}
+          </div>
+        )}
       </header>
     </div>
   );
