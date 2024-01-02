@@ -29,6 +29,8 @@ function dataFromApi(){
                 <div className="hero-main"><i class="fa-regular fa-thumbs-up"></i> <i class="fa-regular fa-comment"></i> <i class="fa-solid fa-share"></i></div>
                 </div>
         })}
-    </div>);
+    </div>
+    );
+    
 }
 export default FbPost

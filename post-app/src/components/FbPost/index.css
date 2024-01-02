@@ -15,8 +15,13 @@
     margin: auto;
 }
 .hero-main i{
-    margin-top: 30px;
-    gap: 30%;
+    margin: 10px;
     width: 200px;
     cursor: pointer;
+}
+@media screen and (min-width: 425px) {
+    /* .hero-main {
+        display: flex;
+        flex-direction: row;
+    } */
 }
