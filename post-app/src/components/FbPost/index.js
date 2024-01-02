@@ -26,7 +26,7 @@ function dataFromApi(){
                 <h4>{item.category}</h4>
                 <p className="desc">{item.description}</p>
                 <div className="gallery">{item.images && <FbImageLibrary images={item.images} />}</div>
-                <div className="hero-main"><i class="fa-regular fa-thumbs-up" width='200px' height='200px'></i> <i class="fa-regular fa-comment"></i> <i class="fa-solid fa-share"></i></div>
+                <div className="hero-main"><i class="fa-regular fa-thumbs-up"></i> <i class="fa-regular fa-comment"></i> <i class="fa-solid fa-share"></i></div>
                 </div>
         })}
     </div>);

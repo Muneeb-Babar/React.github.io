@@ -15,8 +15,8 @@
     margin: auto;
 }
 .hero-main i{
-    
+    margin-top: 30px;
     gap: 30%;
-    width: 180px;
+    width: 200px;
     cursor: pointer;
 }
