@@ -8,7 +8,6 @@ function App() {
   const [currentIndex,setCurrentIndex]=useState(0)
   const [score,setScore]=useState(0)
   const [toggle, settoggle] = useState(false);
-  const [answered, setAnswered] = useState(false);
   const [selectedOption, setselectedOption] = useState(null)
 
   useEffect(function(){
@@ -23,12 +22,10 @@ function App() {
 
 function next(){
   setCurrentIndex(currentIndex + 1)
-  setAnswered(false)
 }
 function restart(){
     setCurrentIndex(0)
     setScore(0)
-    setAnswered(false)
 }
 function start() {
   settoggle(true)
@@ -50,7 +47,7 @@ const isLastQuestion=currentIndex!==questions.length
       <header className="App-header">
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <h1 className='main'>Quiz App</h1>
-        {!toggle ? (<button onClick={start}>Start Quiz</button>
+        {!toggle ? (<button className='btn' onClick={start}>Start Quiz</button>
         ) : (
           <div className="quiz">
             {isLastQuestion ? (
