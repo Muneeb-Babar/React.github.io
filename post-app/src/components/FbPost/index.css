@@ -36,6 +36,7 @@
     width: 100%;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
 }
 .hero-main i{
     font-size: 25px;
@@ -45,7 +46,7 @@
     color: skyblue;
     font-size: 28px;
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 600px) {
     .hero-main {
         display: flex;
         flex-direction: row;

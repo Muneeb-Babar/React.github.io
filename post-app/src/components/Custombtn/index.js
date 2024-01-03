@@ -22,8 +22,8 @@ const handleMouseLeave = () => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         >
-        {isHovered ? emojis.map((emoji, index) => (
-            <span key={index} style={{ marginRight: '5px' }}>{emoji}</span>
+        {isHovered ? emojis.map((emoji) => (
+            <span style={{ marginRight: '5px' }}>{emoji}</span>
         )) : <i class="fa-regular fa-thumbs-up"></i>}
         </button>
     );
