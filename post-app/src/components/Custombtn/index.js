@@ -4,39 +4,28 @@ function Custombtn(){
     // return <button className="btn" onClick={()=>alert('Hi Muneeb')} style={{backgroundColor:props.bgcolor}}>
     //     {props.text}
     // </button>
+
     const [isHovered, setIsHovered] = useState(false);
 
-    const handleHover = () => {
+const emojis = ['😍', '👍', '❤️', '😊', '🥳'];
+
+const handleMouseEnter = () => {
     setIsHovered(true);
-    };
-    const handleLeave = () => {
+};
+
+const handleMouseLeave = () => {
     setIsHovered(false);
-    };
+};
+
     return (
-    <div className="like-button" onMouseEnter={handleHover} onMouseLeave={handleLeave}>
-        <span role="img" aria-label="Like">
-        👍
-        </span>
-        {isHovered && (
-        <div className="emoji-container">
-            <span role="img" aria-label="Love">
-            ❤️
-            </span>
-            <span role="img" aria-label="Haha">
-            😄
-            </span>
-            <span role="img" aria-label="Wow">
-            😮
-            </span>
-            <span role="img" aria-label="Sad">
-            😢
-            </span>
-            <span role="img" aria-label="Angry">
-            😡
-            </span>
-        </div>
-        )}
-    </div>
+        <button style={{border:'none', backgroundColor:'white'}}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        >
+        {isHovered ? emojis.map((emoji, index) => (
+            <span key={index} style={{ marginRight: '5px' }}>{emoji}</span>
+        )) : <i class="fa-regular fa-thumbs-up"></i>}
+        </button>
     );
 }
 export default Custombtn
