@@ -5,12 +5,12 @@ import ContactUs from './views/ContactUs';
 import AboutUs from './views/AboutUs';
 import { useState } from 'react';
 import FbPost from './components/FbPost';
+import Navbar from './components/Navbar';
 
 
 
 function App() {
   // const [screen,setScreen] = useState('dashboard')
-
   return (
     <div className="App">
 {/* <div style={{marginTop:'50px'}}>
@@ -22,12 +22,10 @@ function App() {
       {screen === 'contactUs' && <ContactUs />}
       {screen === 'aboutUs' && <AboutUs />}  */}
 
-
-      <FbPost/>
-
-
-    </div>
-  );
+<Navbar/>
+<FbPost/>
+</div>
+);
 }
 
 export default App;

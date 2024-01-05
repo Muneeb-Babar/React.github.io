@@ -1,0 +1,99 @@
+.navbar{
+    width: 100%;
+    height: 60px;
+    display: flex;
+}
+.input{
+    width: 80%;
+    padding-top: 5px;
+    
+}
+.input input{
+    border-radius: 20px;
+    width: 70%;
+    height: 45px;
+    font-size: 17px;
+    padding-left: 50px;
+    background-color: transparent;
+    /* margin: 4px 40px 0 0; */
+    
+}
+.input i{
+    border: none;
+    position: relative;
+    left: 35px;
+    font-size: 17px;
+}
+.left{
+    width: 30%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.center{
+    width: 48%;
+}
+.center span{
+    width: 100%;
+    height: 100%; 
+    display: flex;
+
+}
+.center i {
+    font-size: 25px;
+    width: 18%;
+    height: 100%;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.center i:hover{
+    background-color: #F0F2F5;
+}
+.right{
+    width: 20%;
+}
+.right span{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.right i {
+    font-size: 22px;
+    background-color: #F0F2F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    /* height: 100%; */
+    border-radius: 50%;
+    margin-right: 5px;
+    cursor: pointer;
+}
+@media screen and (max-width: 600px) {
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.center,.input{
+    display: none;
+}
+.center-icon i{
+    margin: 8px;
+}
+.right i{
+    margin: 20px;
+    border-radius: 50%;
+    font-size: 28px;
+    width: 15%;
+    padding: 8px;
+}
+.right {
+    width: 100%;
+    
+}
+
+}

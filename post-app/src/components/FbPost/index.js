@@ -21,7 +21,6 @@ function dataFromApi(){
 if(!list){
     return <div>Loading...</div>
 }
-
     return (
     <div>
         {list.map(function(item){
@@ -32,11 +31,11 @@ if(!list){
                 {/* <h4>{item.category}</h4> */}
                 <p className="desc">{item.description}</p>
                 <div className="gallery">{item.images && <FbImageLibrary images={item.images} />}</div>
+                <div className='reactIcons'><i class="fa-solid fa-thumbs-up"></i><i class="fa-solid fa-heart"></i><p>1.5k</p>35<i class="fa-regular fa-comment"></i>25<i class="fa-solid fa-share"></i></div>
                 <div className="hero-main"><i><Custombtn/></i><i class="fa-regular fa-comment"></i> <i class="fa-solid fa-share"></i></div>  
                 </div>
         })}
     </div>
     );
-    
 }
 export default FbPost
