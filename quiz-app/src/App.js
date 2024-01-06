@@ -41,7 +41,6 @@ const isLastQuestion=currentIndex!==questions.length
   if(!questions.length){
     return <div className='loder'><img src={logo} className="App-logo" alt="logo" /> </div>
   }
-
   return (
     <div className="App">
       <header className="App-header">
@@ -51,13 +50,13 @@ const isLastQuestion=currentIndex!==questions.length
         ) : (
           <div className="quiz">
             {isLastQuestion ? (
-              <div className="question-div">
+              <div className="question-div" style={{textAlign:'left'}}>
                 <h2>
                   Q{currentIndex + 1}: {questions[currentIndex].question}
                 </h2>
                 {questions[currentIndex].options.map(function (option) {
                   return (
-                    <p>
+                    <p >
                       <input type="radio" name='options' checked={selectedOption === option} onClick={() => checkAnswer(option)} />
                       {option}
                     </p>
@@ -77,5 +76,4 @@ const isLastQuestion=currentIndex!==questions.length
     </div>
   );
 }
-
 export default App;

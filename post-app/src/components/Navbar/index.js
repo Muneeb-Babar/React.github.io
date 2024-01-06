@@ -9,7 +9,7 @@ function Navbar(){
             <span className='input'>
             <i class="fa-solid fa-magnifying-glass"></i>
             <input type='text' placeholder='Search Facebook'/></span>
-            </div>
+</div>
             <div className='center'>
             <span className='center-icon'>
                 <i class="fa-solid fa-house"></i>

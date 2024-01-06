@@ -1,7 +1,11 @@
 .App {
   text-align: center;
 }
-
+*{
+  background-image: url('https://t3.ftcdn.net/jpg/02/64/45/14/240_F_264451404_s4Dhf0mQZdg1N4Gx9RrwfnIIjBiZQ459.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -48,7 +52,15 @@
   margin: auto;
 }
 .btn{
+  width: 100%;
+  font-size: 1.2rem;
   padding: 8px 14px;
   border-radius: 10px;
   filter: drop-shadow(2px 2px 5px rgb(181, 218, 250));
+  background-color: white;
+  color: white;
+  cursor: pointer;
   border: 1px solid skyblue;}
+.quiz{
+  padding: 30px;
+}
