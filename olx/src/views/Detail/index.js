@@ -1,10 +1,27 @@
-import {useNavigate}from 'react-router-dom'
+
+import {useParams} from 'react-router-dom'
+import { useState,useEffect } from 'react'
 
 function Detail(){
-    const navigate=useNavigate()
+//     const [product,setProduct]=useState([])
+
+// const { adId } = useParams();
+
+// useEffect(() => {
+//     getSingleAd();
+// }, []);
+
+// function getSingleAd(){
+//     fetch(`https://dummyjson.com/products/${adId}`)
+// .then(res => res.json())
+// .then(res=>setProduct(res.products));
+// }
+
     return <div>
-        <h1>Detail</h1>
-        <button onClick={()=>navigate(-1)}>Back</button>
+        {/* {product.map(function(item){
+            return <div>{item.title}</div>
+        })} */}
+        <button>Back</button>
     </div>
 }
 export default Detail

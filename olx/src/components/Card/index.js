@@ -1,10 +1,12 @@
 import Card from 'react-bootstrap/Card';
 import { useState,useEffect } from 'react';
 import './index.css'
+import {useNavigate} from 'react-router-dom'
 
 
 
 function Cards(){
+    const navigate=useNavigate()
     const[ads,setAds]=useState([])
 
     useEffect(()=>{
@@ -22,22 +24,21 @@ if(!ads){
     return <div>
         <div className='card1 container'>
         {ads.map(function(item) {
+            const{title,description,thumbnail,id,price}=item
             return <div >
-            <Card style={{ width: '18rem', height:'21rem',border:'1px solid rgb(197, 197, 197)' }}>
-            <img src={item.thumbnail} width={'100%'} height={'120px'}/>
+            <Card style={{ width: '18rem', height:'21rem',border:'1px solid rgb(197, 197, 197)'}} onClick={()=>navigate(`detail${id}`)}>
+            <img src={thumbnail} width={'100%'} height={'120px'}/>
         <Card.Body>
-            <Card.Title>{item.title}</Card.Title>
-            <div style={{fontWeight:'500',fontSize:'1.2rem'}}>price :{item.price}$</div>
+            <Card.Title>{title}</Card.Title>
+            <div style={{fontWeight:'500',fontSize:'1.2rem'}}>price :{price}$</div>
             <Card.Text>
-            {item.description}
+            {description}
             </Card.Text>
         </Card.Body>
         </Card>
             </div>
         })}
         </div>
-        
-        
     </div>
 }
 export default Cards

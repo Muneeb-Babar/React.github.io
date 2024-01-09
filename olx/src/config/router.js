@@ -9,8 +9,8 @@ const router = createBrowserRouter([
     element: <Dashboard/>,
     },
     {
-        path: "/detail",
-        element: <Detail/>,
+        path: '/detail',
+        element: <Detail/>
         },
 ]);
 
