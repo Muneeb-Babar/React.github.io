@@ -1,21 +1,3 @@
-
-.footer{
-    width: 100%;
-    background-color: rgb(247, 247, 247);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-bottom: 1px solid rgb(194, 194, 194);
-    padding-top: 5px;
-}
-.footer1{
-    display: flex;
-    flex-direction: column;
-}
-.footer2 img{
-    margin: 3px;
-    cursor: pointer;
-}
 .footer3{
     width: 100%;
     background-color: rgb(247, 247, 247);
@@ -52,9 +34,5 @@ ul li{
     padding: 12px;
 }
 @media screen and (max-width: 600px) {
-    .footer{
-        display: flex;
-        flex-direction: column-reverse;
-        gap: 15px;
-    }
+
 }

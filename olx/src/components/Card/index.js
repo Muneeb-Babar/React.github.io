@@ -26,7 +26,7 @@ if(!ads){
         {ads.map(function(item) {
             const{title,description,thumbnail,id,price}=item
             return <div >
-            <Card style={{ width: '18rem', height:'21rem',border:'1px solid rgb(197, 197, 197)'}} onClick={()=>navigate(`detail${id}`)}>
+            <Card style={{ width: '18rem', height:'21rem',border:'1px solid rgb(197, 197, 197)'}} onClick={()=>navigate(`detail/${id}`)}>
             <img src={thumbnail} width={'100%'} height={'120px'}/>
         <Card.Body>
             <Card.Title>{title}</Card.Title>

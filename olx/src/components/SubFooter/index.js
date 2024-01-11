@@ -1,21 +1,6 @@
-
 import './index.css'
-
-function Footer(){
+function SubFooter(){
     return <div>
-        <div className="footer">
-            <div className='footer container'>
-            <div ><img src='https://www.olx.com.pk/assets/olxMobileApp.f5579f77e849b600ad60857e46165516.webp' width={250}/></div>
-            <div><h3>TRY THE OLX APP</h3><p style={{fontSize:'1rem'}}>Buy, sell and find just about anything using the app on your mobile.</p></div>
-            <div className='footer1'><p style={{fontSize:'.8rem',fontWeight:'600'}}>GET YOUR APP TODAY</p>
-            <div className='footer2'>
-                <img src='https://www.olx.com.pk/assets/iconAppStoreEN_noinline.a731d99c8218d6faa0e83a6d038d08e8.svg' width={80}/>
-                <img src='https://www.olx.com.pk/assets/iconGooglePlayEN_noinline.9892833785b26dd5896b7c70b089f684.svg' width={80}/>
-                <img src='https://www.olx.com.pk/assets/iconAppGallery_noinline.6092a9d739c77147c884f1f7ab3f1771.svg' width={80}/>
-            </div>
-            </div>
-            </div>
-        </div>
         <div className='footer3'>
             <div className='footer-main  container'>
                 <div><p>POPULAR CATEGORIES</p>
@@ -68,5 +53,4 @@ function Footer(){
         <div className='footer-last'>Free Classifieds in Pakistan . © 2006-2024 OLX</div>
     </div>
 }
-
-export default Footer
+export default  SubFooter
