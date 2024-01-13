@@ -16,7 +16,7 @@ return <div>
     <div><input  placeholder='Pakistan' style={{padding:'5px'}}/></div>
     <div className='input1'><input type='text' placeholder='Find Mobiles,cars and  more...' />
     <span style={{backgroundColor:'#002f34', padding:'6px'}}><i class="fa-solid fa-magnifying-glass" style={{color:'white'}}></i></span>
-    <div><button className='btn'>Login</button></div>
+    <div><button className='btn5'>Login</button></div>
     <div><img src={logo} style={{width:'65px', height:'30px', cursor:'pointer'}}/></div>
     </div>
     </div>

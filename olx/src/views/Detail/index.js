@@ -6,6 +6,7 @@ import SubHeader from '../../components/SubHeaader';
 import SubFooter from '../../components/SubFooter';
 import './index.css'
 import DarkVariantExample from '../../components/Slider';
+import { getSingleAds } from '../../config/firebase';
 
 
 function Detail(){
@@ -17,11 +18,17 @@ useEffect(() => {
     getSingleAd();
 }, []);
 
-function getSingleAd(){
-    fetch(`https://dummyjson.com/products/${adId}`)
-.then(res => res.json())
-.then(res=>setProduct(res));
+const getSingleAd=async()=>{
+    const res=await getSingleAds(adId)
+    setProduct(res)
 }
+const{brand,location,description,price}=product
+
+// Noob function getSingleAd(){
+//     fetch(`https://dummyjson.com/products/${adId}`)
+// .then(res => res.json())
+// .then(res=>setProduct(res));
+// }
 
     return <div>
         <SubHeader/>
@@ -29,18 +36,18 @@ function getSingleAd(){
             <div className='first'>
             <DarkVariantExample/>
             <div className='first1'>
-                <h1>Price{product.price}$</h1>
-                <h3>{product.title}</h3>
-                <i class="fa-solid fa-location-dot"></i> <label>Karachi,Pakistan</label>
+                <h1>Price{price}$</h1>
+                <h3>{brand}</h3>
+                <i class="fa-solid fa-location-dot"></i> <label>{location}</label>
             </div>
             <div className='first2'>
                 <h2>Details</h2>
-                <h6>Brand : {product.brand}</h6>
-                <h6>Price : {product.price}$</h6>
+                <h6>Brand : {brand}</h6>
+                <h6>Price : {price}$</h6>
             </div>
             <div className='first2'>
                 <h2>Description</h2>
-                <p>{product.description}</p>
+                <p>{description}</p>
             </div>
             </div>
             <div className='second'>

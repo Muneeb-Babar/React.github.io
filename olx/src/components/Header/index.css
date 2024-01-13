@@ -33,6 +33,7 @@
 .input1{
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .main3{
     width: 100%;
@@ -86,6 +87,7 @@
         
     }
     .main4{
+        height: 80px;
         background-size: 100%;
         background-position: left;
         background-repeat: no-repeat;
