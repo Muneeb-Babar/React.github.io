@@ -4,6 +4,8 @@ import Dashboard from "../views/Dashboard";
 import Detail from "../views/Detail";
 import SignUp from "../components/Signup";
 import Login from "../components/Login";
+import Selloptions from "../components/Selloptions";
+import Sellerform from "../components/Sellerform";
 
 const router = createBrowserRouter([
     {
@@ -22,6 +24,14 @@ const router = createBrowserRouter([
             path: '/signup',
             element: <SignUp/>
             },
+            {
+                path: '/selloptions',
+                element: <Selloptions/>
+                },
+                {
+                    path: '/sellerform',
+                    element: <Sellerform/>
+                    },
             
             
 ]);

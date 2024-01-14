@@ -1,7 +1,8 @@
 
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithEmailAndPassword,createUserWithEmailAndPassword } from "firebase/auth";
-import { getFirestore,collection, getDocs,doc, getDoc } from "firebase/firestore";
+import { getAuth, signInWithEmailAndPassword,createUserWithEmailAndPassword,onAuthStateChanged } from "firebase/auth";
+import { getFirestore,collection, getDocs,doc, getDoc,addDoc } from "firebase/firestore";
+import { getStorage, ref, uploadBytes, getDownloadURL }from "firebase/storage";
 
 const firebaseConfig = {
 apiKey: "AIzaSyBLqwOxwbWF89ZVE-Hx6Oauw9eIuy8Syp0",
@@ -63,4 +64,37 @@ export async function getSingleAds(adId) {
         // docSnap.data() will be undefined in this case
         console.log("No such document!");
     }
+}
+export async function postToDb(ad) {
+    try {
+    const storage = getStorage();
+    const storageRef = ref(storage, `ads/${ad.image.name}`);
+      // Upload image to Firebase Storage
+    await uploadBytes(storageRef, ad.image);
+    
+      // Get the download URL of the uploaded image
+    const imageUrl = await getDownloadURL(storageRef);
+    ad.image = imageUrl;
+
+      // Add the ad object to Firestore
+    await addDoc(collection(db, "ads"), ad);
+
+    return { success: true, message: 'Data added successfully!' };
+    } catch (error) {
+    console.error('Error posting to database:', error.message);
+    }
+}
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/auth.user
+    const uid = user.uid;
+      // ...
+    } else {
+      // User is signed out
+      // ...
+    }
+});
+export{
+    auth
 }

@@ -8,10 +8,7 @@ function Login(){
     const [users, setUsers] = useState('')
     const [password, setPassword] = useState('')
 
-    
-
 const checkLogIn=async()=>{
-
 try{
     const res=await LoginSetup(users,password)
     console.log(res)

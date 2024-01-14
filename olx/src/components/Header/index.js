@@ -1,12 +1,32 @@
 import {useNavigate}from 'react-router-dom'
 import logo from '../../assets/logo.PNG'
 import BasicExample from '../Navbar';
-import TextLinkExample from '../Navbar';
-import ContainerInsideExample from '../Navbar';
 import './index.css'
+import { useState,useEffect } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../../config/firebase'; 
+
+
 
 function Header(){
     const navigate=useNavigate()
+    const [userId, setUserId] = useState('');
+    const [userEmail, setUserEmail] = useState('');
+
+    useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+        if (user) {
+          // User is signed in.
+        setUserId(user.uid);
+        setUserEmail(user.email);
+        } else {
+          // No user is signed in.
+        setUserId('');
+        setUserEmail('');
+        }
+    });
+    return () => unsubscribe();
+    }, []);
 return <div>
     <div className='main' >
     <BasicExample/>
@@ -20,8 +40,16 @@ return <div>
     <div><input  placeholder='Pakistan' style={{padding:'5px'}}/></div>
     <div className='input1'><input type='text' placeholder='Find Mobiles,cars and more...' />
     <span style={{backgroundColor:'#002f34', padding:'6px'}}><i class="fa-solid fa-magnifying-glass" style={{color:'white'}}></i></span>
-    <div><button className='btn1' onClick={()=>navigate('login')}>Login</button></div>
-    <div><img src={logo} style={{width:'65px', height:'30px', cursor:'pointer',marginLeft:'12px'}}/></div>
+    <div>{userId ? (
+            <button className='btn1' onClick={() => navigate('login')}>
+                {userEmail}
+            </button>
+            ) : (
+            <button className='btn1' onClick={() => navigate('login')}>
+                Log In
+            </button>
+            )}</div>
+    <div onClick={()=>navigate('/selloptions')}><img src={logo} style={{width:'65px', height:'30px', cursor:'pointer',marginLeft:'12px'}}/></div>
     </div>
     </div>
 </div>
