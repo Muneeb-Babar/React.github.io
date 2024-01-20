@@ -6,6 +6,7 @@ import SignUp from "../components/Signup";
 import Login from "../components/Login";
 import Selloptions from "../components/Selloptions";
 import Sellerform from "../components/Sellerform";
+import GetMyAd from "../MyAds";
 
 const router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
                     path: '/sellerform',
                     element: <Sellerform/>
                     },
+                    {
+                        path: '/myads',
+                        element: <GetMyAd/>
+                        },
             
             
 ]);

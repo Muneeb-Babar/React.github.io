@@ -41,11 +41,11 @@ return <div>
     <div className='input1'><input type='text' placeholder='Find Mobiles,cars and more...' />
     <span style={{backgroundColor:'#002f34', padding:'6px'}}><i class="fa-solid fa-magnifying-glass" style={{color:'white'}}></i></span>
     <div>{userId ? (
-            <button className='btn1' onClick={() => navigate('login')}>
+            <button className='btn1' onClick={() => navigate('/login')}>
                 {userEmail}
             </button>
             ) : (
-            <button className='btn1' onClick={() => navigate('login')}>
+            <button className='btn1' onClick={() => navigate('/login')}>
                 Log In
             </button>
             )}</div>

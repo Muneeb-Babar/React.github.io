@@ -63,9 +63,7 @@ const{brand,location,description,price}=product
                 <div className='second2'>
                     <h2>Location</h2>
                     <i class="fa-solid fa-location-dot"></i> <label>City Housing Society,Karachi</label>
-
                 </div>
-                
             </div>
         </div>
         <SubFooter/>

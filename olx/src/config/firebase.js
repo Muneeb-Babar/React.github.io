@@ -1,7 +1,7 @@
 
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithEmailAndPassword,createUserWithEmailAndPassword,onAuthStateChanged } from "firebase/auth";
-import { getFirestore,collection, getDocs,doc, getDoc,addDoc } from "firebase/firestore";
+import { getAuth, signInWithEmailAndPassword,createUserWithEmailAndPassword,} from "firebase/auth";
+import { getFirestore,collection, getDocs,doc, getDoc,addDoc,setDoc,where, query } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL }from "firebase/storage";
 
 const firebaseConfig = {
@@ -18,7 +18,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-export async function LoginSetup(users,password){
+export async function LoginSetup({users,password}){
     // const auth = getAuth();
     
 try{
@@ -31,10 +31,15 @@ catch(e){
 }
 }
 
-export async function SignSetup(email,password,name){
+export async function SignSetup({email,password,name}){
     try{
         const res=await createUserWithEmailAndPassword(auth, email, password,name)
-    return res
+        
+        await setDoc(doc(db, "users", res.user.uid), {
+            name ,
+            email
+        });
+        return res
     }
     catch(e){
         alert(e.message)
@@ -58,7 +63,6 @@ export async function getSingleAds(adId) {
 
     if (docSnap.exists()) {
         const ad = docSnap.data()
-
         return ad
     } else {
         // docSnap.data() will be undefined in this case
@@ -84,17 +88,30 @@ export async function postToDb(ad) {
     console.error('Error posting to database:', error.message);
     }
 }
-onAuthStateChanged(auth, (user) => {
-    if (user) {
-      // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/auth.user
-    const uid = user.uid;
-      // ...
-    } else {
-      // User is signed out
-      // ...
-    }
-});
+// onAuthStateChanged(auth, (user) => {
+//     if (user) {
+//       // User is signed in, see docs for a list of available properties
+//       // https://firebase.google.com/docs/reference/js/auth.user
+//     const uid = user.uid;
+//       // ...
+//     } else {
+//       // User is signed out
+//       // ...
+//     }
+// });
+
+export async function getMyAdsFromDb(uid) {
+    const adsRef = collection(db, "ads")
+    const querySnapshot = await getDocs(query(adsRef, where("uid", "==", uid)))
+    const ads = []
+    querySnapshot.forEach((doc) => {
+        const ad = doc.data()
+        ad.id = doc.id
+        ads.push(ad)
+    });
+
+    return ads
+}
 export{
     auth
 }

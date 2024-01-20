@@ -9,8 +9,12 @@ function SignUp(){
     const[name,setName]=useState('')
 
 const checkSignup= async()=>{
-    const res=await SignSetup(email,password,name)
+    const res=await SignSetup({email,password,name})
     console.log(res)
+    if(!email||!password){
+        alert('Enter All Values')
+        return
+    }
     if (res) {
         // Assuming LoginSetup returns a truthy value when login is successful
         navigate('/login');

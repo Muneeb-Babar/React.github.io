@@ -1,48 +1,49 @@
 import { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import CustomBtn from './components/CustomBtn';
 
 function App() {
   
-  const [toggle , settoggle] = useState(true)
-  const [list , setlist] = useState([])
-  const [text, settext] = useState('')
-  const [updateIndex, setUpdateIndex] = useState();
+  // const [toggle , settoggle] = useState(true)
+  // const [list , setlist] = useState([])
+  // const [text, settext] = useState('')
+  // const [updateIndex, setUpdateIndex] = useState();
   
-  function inputValue(e){
-    const value = e.target.value
-    settext(value)
-  }
-  function addItem(){
-    const copyText = [...list]
-    copyText.push(text)
-    settext('');
-    setlist(copyText)
-  }
+  // function inputValue(e){
+  //   const value = e.target.value
+  //   settext(value)
+  // }
+  // function addItem(){
+  //   const copyText = [...list]
+  //   copyText.push(text)
+  //   settext('');
+  //   setlist(copyText)
+  // }
   
-  function deleteItem(index){
-    const copyList = [...list]
-    copyList.splice(index , 1)
-    setlist(copyList)
-  }
+  // function deleteItem(index){
+  //   const copyList = [...list]
+  //   copyList.splice(index , 1)
+  //   setlist(copyList)
+  // }
   
-  function editItem(index){
-    const editedText = list[index];
-    settext(editedText);
-    setUpdateIndex(index);
-    settoggle(false);
-  }
+  // function editItem(index){
+  //   const editedText = list[index];
+  //   settext(editedText);
+  //   setUpdateIndex(index);
+  //   settoggle(false);
+  // }
   
-  function updateItem(){
-    const copyList = [...list];
-    copyList[updateIndex] = text;
-    setlist(copyList);
-    settext('');
-    settoggle(true);
-  }
-  function deleteAll(){
-    setlist([])
-  }
+  // function updateItem(){
+  //   const copyList = [...list];
+  //   copyList[updateIndex] = text;
+  //   setlist(copyList);
+  //   settext('');
+  //   settoggle(true);
+  // }
+  // function deleteAll(){
+  //   setlist([])
+  // }
 
   // const obj = {name: "Hello World Object"}
   // const data = ['We', 'are', 'United']
@@ -102,10 +103,19 @@ function App() {
   //   console.log(updateList);
   //   setlist(updateList)
   // }
+  const [color, setColor] = useState(0)
+  const [show, setShow] = useState(true)
 
   return (
     <div className="App">
-      <header className="App-header">
+    
+    {show && <CustomBtn text='Click Me' bgColor={color}/>}
+    <br/>
+    <button onClick={() => setShow(!show)}>Show/Hide</button>
+    <br/><br/><br/>
+        <button onClick={() => setColor(0)}>Red</button>
+        <button onClick={() => setColor(1)}>Green</button>
+        <button onClick={() => setColor(2)}>Blue</button>
         {/* <img src={show ? onImg :offImg}  alt="logo" width='300' />
         <br/>
         <p>{text ? txt1 : txt2}</p> */}
@@ -145,7 +155,7 @@ function App() {
           <br/>
           <button onClick={()=>setShow(false)}>Off</button> */}
 
-          <input placeholder='Enter Any Item' onChange={inputValue} value={text}/>
+          {/* <input placeholder='Enter Any Item' onChange={inputValue} value={text}/>
           {toggle ? <button onClick={addItem}>Add</button> 
           :<button onClick={() => updateItem()}>Update</button>}<br/>
           <button onClick={deleteAll}>Delete All</button>
@@ -165,8 +175,8 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
-      </header>
+        </a> */}
+        
     </div>
   );
 }

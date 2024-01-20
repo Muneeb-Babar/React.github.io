@@ -13,7 +13,6 @@ function Sellerform() {
     const[image,setImage]=useState(null)
     const[location,setLocation]=useState('')
 
-
     const onSubmit = async () => {
         try {
     // if (!title || !description || !brand || !price || !image || !location) {
@@ -100,8 +99,7 @@ return (
     <button onClick={onSubmit}>Post now</button>
 </div>
 </div>
-    </div>
+</div>
 )
 }
-
 export default Sellerform

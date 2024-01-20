@@ -7,7 +7,7 @@ function Selloptions() {
     return (
     <div>
     <div className="main12"><img src="https://www.olx.com.pk/assets/logo_noinline.1cdf230e49c0530ad4b8d43e37ecc4a4.svg" alt="" width="70"/>
-    <div><button>My Ads</button></div></div>
+    <div><button onClick={()=>navigate('/myads')}>My Ads</button></div></div>
     <div>
     <h1 style={{textAlign:'center'}}>Post Your Add</h1>
     <div className="categories container">

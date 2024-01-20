@@ -10,7 +10,7 @@ function Login(){
 
 const checkLogIn=async()=>{
 try{
-    const res=await LoginSetup(users,password)
+    const res=await LoginSetup({users,password})
     console.log(res)
     if(!users||!password){
         alert('Enter All Values')
