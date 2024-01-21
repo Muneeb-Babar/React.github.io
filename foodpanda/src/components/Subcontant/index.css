@@ -1,0 +1,44 @@
+.contant8{
+    margin-top: 70px;
+    width: 100%;
+    height: 40vh;
+    background-image: url('https://images.deliveryhero.io/image/foodpanda/home-corporate-pk.jpg?width=1400&height=896');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    position: relative;
+}
+.contant9{
+    width: 30%;
+    background-color: white;
+    color: black;
+    box-shadow: 5px 5px 15px rgb(224, 224, 224);
+    border-radius: 10px;
+    padding: 20px 30px;position: absolute;
+    position: absolute;
+    top: 80%;
+    left: 15%;
+    text-align: left;
+}
+@media screen and (max-width:600px) {
+    .contant9{
+        width: 75%;
+    }
+}
+@media screen and (width:768px) {
+    .contant9{
+        width: 75%;
+    }
+}
+@media screen and (width:1024px) {
+    .contant9{
+        width: 50%;
+    }
+}
+@media screen and (width:1440px) {
+    .contant9{
+        width: 50%;
+    }
+}

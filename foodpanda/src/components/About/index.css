@@ -1,0 +1,13 @@
+.down{
+    text-align: left;
+}
+
+
+@media screen and (max-width:600px) {
+    .down{
+        padding-top: 40%;
+    }
+    .down1{
+        font-size: 20px;
+    }
+}

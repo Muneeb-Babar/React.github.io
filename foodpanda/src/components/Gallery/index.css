@@ -1,0 +1,31 @@
+.Gallery{
+    width: 100%;
+    display: flex;
+    column-gap: 30px;
+    padding-top: 40px;
+}
+.Gallery img{
+    height: 100%;
+    border-radius: 10px;
+}
+.Gallery div span{
+    background-color: white; 
+    color: black; position: absolute;
+    left: 10px; bottom: 10px; 
+    padding: 14px 22px; 
+    border-radius: 15px;
+    cursor: pointer;
+}
+.Gallery img{
+    width: 100%;
+}
+.Gallery> div{
+    position: relative;
+}
+@media screen and (max-width:600px) {
+    .Gallery{
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 30px;
+    }
+}

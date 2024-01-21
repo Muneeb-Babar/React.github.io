@@ -1,0 +1,78 @@
+.card{
+    width: 50%;
+    padding: 30px;
+    box-shadow: 5px 5px 15px rgb(225, 222, 222);
+    border-radius: 10px;
+    margin-top: 10%;
+}
+.card-btn1{
+    background-color: rgb(14, 91, 154);
+    border: 1px solid rgb(23, 67, 141);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 1s;
+    font-size: 1.1rem;
+    margin-top: 15px;
+}
+.card-btn1:hover{
+    opacity: 0.5;
+}
+.card-btn2{
+    background-color: black;
+    color: white;
+    margin-top: 50px;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+.card-btn3{
+    background-color: #e21b70;
+    color: white;
+    border: 1px solid #e21b70;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.card-btn4{
+    background-color: #fff;
+    color: #e21b70;
+    margin-top: 30px;
+    border: 1px solid #e21b70;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: 1s;
+}
+.card-btn4:hover{
+    background-color: #f5dfe9;
+    border: none;
+}
+.card1{
+    width: 20%;
+    padding: 30px 60px;
+    box-shadow: 5px 5px 15px rgb(225, 222, 222);
+    border-radius: 10px;
+    margin-top: 10%;
+}
+.card-btn5{
+    width: 100%;
+    background-color: #bebdbd;
+    color: #ffffff;
+    margin-top: 20px;
+    border: 1px solid #b9b9b9;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: 1s;
+}
+@media screen and (max-width:600px) {
+    .card{
+        width: 80%;
+        margin-top: 80px;
+    }
+}

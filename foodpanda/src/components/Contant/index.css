@@ -1,0 +1,67 @@
+
+.contant3 h5{
+    padding-top: 50px;
+    font-size: 2rem;
+    text-align: left;
+}
+.contant4{
+    margin-top: 20px;
+    width: 100%;
+    height: 50vh;
+    background-image: url('https://images.deliveryhero.io/image/foodpanda/home-vendor-pk.jpg?width=1400&height=896');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+.contant5{
+    width: 30%;
+    background-color: white;
+    color: black;
+    box-shadow: 5px 5px 15px rgb(224, 224, 224);
+    border-radius: 1px;
+    padding: 20px 30px;position: absolute;
+    left: 15%;
+    text-align: left;
+}
+.contant6 h5{
+    padding-top: 300px;
+    font-size: 2rem;
+    text-align: left;
+}
+
+@media screen and (max-width: 600px) {
+    .contant3 h5{
+        font-size: 20px;
+        text-align: center;
+    }
+    .contant5{
+        width: 75%;
+    }
+
+}
+@media screen and (width: 768px) {
+
+    .contant5{
+        width: 50%;
+    }
+    .contant5 p{text-transform: justify;}
+
+}
+@media screen and (width: 1024px) {
+
+    .contant5{
+        width: 50%;
+    }
+    .contant5 p{text-transform: justify;}
+
+}
+@media screen and (width: 1440px) {
+
+    .contant5{
+        width: 50%;
+    }
+    .contant5 p{text-transform: justify;}
+
+}
