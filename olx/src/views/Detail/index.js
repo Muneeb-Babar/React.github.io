@@ -31,7 +31,7 @@ const{brand,location,description,price}=product
 // }
 
     return <div>
-        <SubHeader/>
+        {/* <SubHeader/> */}
         <div className='slider container'>
             <div className='first'>
             <DarkVariantExample/>
