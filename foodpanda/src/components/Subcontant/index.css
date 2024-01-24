@@ -18,13 +18,14 @@
     border-radius: 10px;
     padding: 20px 30px;position: absolute;
     position: absolute;
-    top: 80%;
+    top: 70%;
     left: 15%;
     text-align: left;
 }
 @media screen and (max-width:600px) {
     .contant9{
         width: 75%;
+        top: 60%;
     }
 }
 @media screen and (width:768px) {

@@ -5,7 +5,7 @@ import './index.css'
 function About() {
 return (
     <div>
-    <div className="container down" style={{marginTop:'12%'}}>
+    <div className="container down" style={{marginTop:'10%'}}>
                     <h2 className="down1"><b>Order food and groceries online from the best restaurants and shops on <br/> foodpanda</b></h2><br/>
                     <p>Are you hungry? Did you have a long and stressful day? Interested in getting a cheesy pizza delivered to your office or looking to avoid the weekly shop?Then foodpanda <br/> Pakistan is the right destination for you! foodpanda offers you a long and detailed list of the best restaurants and shops near you to help make your every day easier.</p>
                     <br/>
