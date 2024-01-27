@@ -10,7 +10,7 @@ function FbPost(){
 useEffect(function(){
     dataFromApi()
 },[])
-dataFromApi()
+// dataFromApi()
 
 function dataFromApi(){
     fetch('https://dummyjson.com/products')

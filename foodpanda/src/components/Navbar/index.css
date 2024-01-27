@@ -19,10 +19,11 @@
     position: absolute;
     right: 80px;
 }
-.right_nav a{
+.right_nav div{
     text-decoration: none;
     margin: 8px;
     text-align: center;
+    cursor: pointer;
 }
 .log{
     color:#e21b70;

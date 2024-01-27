@@ -29,14 +29,15 @@ ul li{
 }
 .footer-main{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding-top: 30px;
-    align-items: flex-start;
+    align-items: center;
 }
 .footer-main p{
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
+    text-align: center;
 }
 .footer4 i{
     margin: 5px;

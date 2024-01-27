@@ -3,9 +3,8 @@
     width: 100%;
     background-color: rgb(238, 238, 238);
     padding: 15px;
-    position: sticky;
-    top: 0;
-    z-index: 1;
+    /* position: sticky;
+    top: 0; */
 }
 .nav-top{
     display: flex;
@@ -17,23 +16,24 @@
     width: 100%;
     text-align: left;
     display: flex;
-    align-items: center;
-    gap: 10px;
+    align-items: flex-start;
+    gap: 5px;
 
 }
 .fil{
     fill: rgb(40, 140, 255);
 }
 .btn1{
-    font-size: 1.5rem;
+    font-size: 1rem;
     border: none;
     text-decoration: underline;
-    margin-left: 8px;
+    margin-left: 2px;
+    cursor: pointer;
 }
 .input1{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 .main3{
     width: 100%;

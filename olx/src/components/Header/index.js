@@ -28,7 +28,7 @@ function Header(){
     return () => unsubscribe();
     }, []);
 return <div>
-    <div className='main' >
+    <div className='main'>
     <BasicExample/>
     <div className='nav-top container'>
     <div  class="ac22b0e1"><a href="/" class="_5afdd59e d19dc9be" ><svg className='fil' fill='rgb(40, 140, 255)' height="20" viewBox="0 0 36.289 20.768" alt="Logo" class="_10c831ef"><path style={{color:'blue'}} d="M18.9 20.77V0h4.93v20.77zM0 10.39a8.56 8.56 0 1 1 8.56 8.56A8.56 8.56 0 0 1 0 10.4zm5.97-.01a2.6 2.6 0 1 0 2.6-2.6 2.6 2.6 0 0 0-2.6 2.6zm27 5.2l-1.88-1.87-1.87 1.88H25.9V12.3l1.9-1.9-1.9-1.89V5.18h3.27l1.92 1.92 1.93-1.92h3.27v3.33l-1.9 1.9 1.9 1.9v3.27z"></path></svg></a></div>
@@ -39,17 +39,19 @@ return <div>
     <div  class="ac22b0e1"><a href="/" class="_5afdd59e d19dc9be" ><svg  height="30" viewBox="0 0 36.289 20.768" alt="Logo" class="_10c831ef"><path style={{color:'blue'}} d="M18.9 20.77V0h4.93v20.77zM0 10.39a8.56 8.56 0 1 1 8.56 8.56A8.56 8.56 0 0 1 0 10.4zm5.97-.01a2.6 2.6 0 1 0 2.6-2.6 2.6 2.6 0 0 0-2.6 2.6zm27 5.2l-1.88-1.87-1.87 1.88H25.9V12.3l1.9-1.9-1.9-1.89V5.18h3.27l1.92 1.92 1.93-1.92h3.27v3.33l-1.9 1.9 1.9 1.9v3.27z"></path></svg></a></div>
     <div><input  placeholder='Pakistan' style={{padding:'5px'}}/></div>
     <div className='input1'><input type='text' placeholder='Find Mobiles,cars and more...' />
-    <span style={{backgroundColor:'#002f34', padding:'6px'}}><i class="fa-solid fa-magnifying-glass" style={{color:'white'}}></i></span>
-    <div>{userId ? (
+    <span style={{backgroundColor:'#002f34', padding:'7px'}}><i class="fa-solid fa-magnifying-glass" style={{color:'white'}}></i></span>
+    <div style={{display:'flex', flexWrap:'wrap'}}>
+    {userId ? (
             <button className='btn1'>
                 {userEmail}
             </button>
             ) : (
             <button className='btn1' onClick={() => navigate('/login')}>
-                Log In
+                LogIn
             </button>
-            )}</div>
-    <div onClick={()=>navigate('/selloptions')}><img src={logo} style={{width:'65px', height:'30px', cursor:'pointer',marginLeft:'12px'}}/></div>
+            )}
+    </div>
+    <div onClick={()=>navigate('/selloptions')}><img src={logo} style={{width:'100%', height:'25px', cursor:'pointer',}}/></div>
     </div>
     </div>
 </div>

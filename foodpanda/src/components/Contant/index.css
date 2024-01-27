@@ -39,6 +39,9 @@
     .contant5{
         width: 75%;
     }
+    .contant6{
+        padding-top: 30px;
+    }
 
 }
 @media screen and (width: 768px) {
