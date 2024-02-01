@@ -1,0 +1,22 @@
+
+.box{
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+.red{
+    background-color: red;
+}
+.green{
+    background-color: green;
+}
+.blue{
+    background-color: skyblue;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+    
+}
