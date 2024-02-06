@@ -11,6 +11,7 @@ import Header from "../components/Header";
 import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from "./firebase";
 import { useState,useEffect } from "react";
+import Forget from "../components/Forget";
 
 const router = createBrowserRouter([
     {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
     {
         path: '/myads',
         element: <GetMyAd/>
+    },
+    {
+        path: '/forgetpassword',
+        element: <Forget/>
     },
     
 ]);

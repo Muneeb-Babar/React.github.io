@@ -44,7 +44,7 @@ const handlePasswordInput = (e) => {
         <input size={30} placeholder='Enter Your Email' className='logInput' type='email' onChange={handleUserInput}/>
         <br/>
         <input size={30} placeholder='Enter Your Password' className='logInput' type='password' onChange={handlePasswordInput}/>
-        <br/>
+        <p style={{cursor:'pointer'}}  onClick={()=>navigate('/forgetpassword')}>Forget Password</p>
         <button className="btn" onClick={checkLogIn}>Login</button>
         <br/>
         <p>By continuing, you are accepting <br/>

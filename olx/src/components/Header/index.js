@@ -42,7 +42,7 @@ return <div>
     <span style={{backgroundColor:'#002f34', padding:'7px'}}><i class="fa-solid fa-magnifying-glass" style={{color:'white'}}></i></span>
     <div style={{display:'flex', flexWrap:'wrap'}}>
     {userId ? (
-            <button className='btn1'>
+            <button className='btn1' onClick={() => navigate('/login')}>
                 {userEmail}
             </button>
             ) : (

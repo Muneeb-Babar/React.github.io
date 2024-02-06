@@ -10,7 +10,7 @@ function Sellerform() {
     const[description,setDescription]=useState('')
     const[brand,setBrand]=useState('')
     const[price,setPrice]=useState('')
-    const[image,setImage]=useState(null)
+    const[image,setImage]=useState()
     const[location,setLocation]=useState('')
 
     const onSubmit = async () => {
@@ -54,6 +54,10 @@ alert('An error occurred while posting your Ad. Please try again later.');
     const handleImage=(e)=>{
         setImage(e.target.files[0])
     }
+    // const handleImage = (e) => {
+    //     const files = Array.from(e.target.files);
+    //     setImage(files);
+    // };
     const handleLocation=(e)=>{
         setLocation(e.target.value)
     }
@@ -83,7 +87,7 @@ return (
     <div className="container des4">
         <h5>UPLOAD UP TO 4 PHOTOS</h5>
         <div style={{display:'flex',rowGap:'10px',flexWrap:'wrap'}}>
-            <div className="sub"><img src="https://www.olx.com.pk/assets/iconAddPhoto_noinline.8924e2486f689a28af51da37a7bda6ec.svg"  width={100}/> <input type="file" onChange={handleImage}/></div>
+            <div className="sub"><img src="https://www.olx.com.pk/assets/iconAddPhoto_noinline.8924e2486f689a28af51da37a7bda6ec.svg"  width={100}/> <input type="file" onChange={handleImage} multiple/></div>
             <div className="sub"><img src="https://www.olx.com.pk/assets/iconAddPhoto_noinline.8924e2486f689a28af51da37a7bda6ec.svg"   width={100}/><input type="file"/></div>
             <div className="sub"><img src="https://www.olx.com.pk/assets/iconAddPhoto_noinline.8924e2486f689a28af51da37a7bda6ec.svg"   width={100}/><input type="file"/></div>
             <div className="sub"><img src="https://www.olx.com.pk/assets/iconAddPhoto_noinline.8924e2486f689a28af51da37a7bda6ec.svg"   width={100}/><input type="file"/></div>

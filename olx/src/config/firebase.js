@@ -1,6 +1,6 @@
 
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithEmailAndPassword,createUserWithEmailAndPassword,} from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword,createUserWithEmailAndPassword,sendPasswordResetEmail} from "firebase/auth";
 import { getFirestore,collection, getDocs,doc, getDoc,addDoc,setDoc,where, query } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL }from "firebase/storage";
 
@@ -100,6 +100,11 @@ export async function getMyAdsFromDb(uid) {
     });
 
     return ads
+}
+export async function checkPassword(email){
+    const res=await sendPasswordResetEmail(auth, email)
+    console.log(res)
+
 }
 export{
     auth
