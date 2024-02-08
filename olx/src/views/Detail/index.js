@@ -1,8 +1,11 @@
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {useParams} from 'react-router-dom'
+import {useParams,useNavigate,} from 'react-router-dom'
 import { useState,useEffect } from 'react'
-import SubHeader from '../../components/SubHeaader';
+import {useDispatch}from 'react-redux'
+// import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
+
+import { updateCart } from '../../Store/cartSlice';
 import SubFooter from '../../components/SubFooter';
 import './index.css'
 import DarkVariantExample from '../../components/Slider';
@@ -10,6 +13,8 @@ import { getSingleAds } from '../../config/firebase';
 
 
 function Detail(){
+    const dispatch=useDispatch()
+    const navigate=useNavigate()
     const [product,setProduct]=useState([])
 
 const { adId } = useParams();
@@ -24,11 +29,18 @@ const getSingleAd=async()=>{
 }
 const{brand,location,description,price}=product
 
+
 // Noob function getSingleAd(){
 //     fetch(`https://dummyjson.com/products/${adId}`)
 // .then(res => res.json())
 // .then(res=>setProduct(res));
 // }
+
+const handleCart=()=>{
+    console.log(product)
+    dispatch(updateCart(product))
+}
+
 
     return <div>
         <div className='slider container'>
@@ -47,6 +59,10 @@ const{brand,location,description,price}=product
             <div className='first2'>
                 <h2>Description</h2>
                 <p>{description}</p>
+                <div style={{display:'flex',justifyContent:'space-between'}}>
+                    <div><button style={{border:'none',padding:'6px 14px',borderRadius:'20px'}} onClick={handleCart}>Add to cart</button></div>
+                    <div style={{cursor:'pointer'}} onClick={()=>navigate('/cart')}><img width={30} src='https://www.freepnglogos.com/uploads/shopping-cart-png/shopping-cart-svg-png-icon-download-28.png'/></div>
+                </div>
             </div>
             </div>
             <div className='second'>
@@ -63,6 +79,7 @@ const{brand,location,description,price}=product
                     <h2>Location</h2>
                     <i class="fa-solid fa-location-dot"></i> <label>City Housing Society,Karachi</label>
                 </div>
+                <div><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d28955.564250745414!2d67.1775438!3d24.88278015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1707386601540!5m2!1sen!2s" width={'100%'} height="350"  loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe></div>
             </div>
         </div>
         <SubFooter/>

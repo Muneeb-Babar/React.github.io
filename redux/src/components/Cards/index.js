@@ -4,7 +4,7 @@ import {useNavigate}from 'react-router-dom'
 import {useSelector} from 'react-redux'
 
 export default function Cards() {
-    const color = useSelector((state) => state.theme)
+    const color = useSelector((state) => state.themeReducer.theme)
 
     const navigate=useNavigate()
 return (

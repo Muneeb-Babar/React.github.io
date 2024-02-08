@@ -5,7 +5,7 @@ import {useSelector} from 'react-redux'
 
 export default function AboutUs() {
     const navigate=useNavigate()
-    const theme=useSelector(state => state.theme)
+    const theme=useSelector(state => state.themeReducer.theme)
 return (
     <div style={{height:'500px', background: theme}}>
     <h2>About us</h2>

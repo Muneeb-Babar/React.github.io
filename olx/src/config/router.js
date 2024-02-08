@@ -12,6 +12,7 @@ import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from "./firebase";
 import { useState,useEffect } from "react";
 import Forget from "../components/Forget";
+import Cart from "../views/CartDetail";
 
 const router = createBrowserRouter([
     {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
             {
                 path: '/detail/:adId',
                 element: <Detail/>
+            },
+            {
+                path: 'cart',
+                element: <Cart/>
             },
                 ]
     },
