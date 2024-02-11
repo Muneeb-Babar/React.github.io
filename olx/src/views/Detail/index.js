@@ -90,7 +90,7 @@ const address = {
                 </div>
                 <div className='second2'>
                     <h2>Location</h2>
-                    <i class="fa-solid fa-location-dot"></i> <label>City Housing Society,Karachi</label>
+                    <i class="fa-solid fa-location-dot"></i> <label>{location}</label>
                 </div>
                 <div>
                     <MapComponent address={address}/>

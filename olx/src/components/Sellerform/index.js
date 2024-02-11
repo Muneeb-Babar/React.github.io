@@ -2,7 +2,7 @@ import React from 'react'
 import './index.css'
 import{useNavigate}from 'react-router-dom'
 import { postToDb } from '../../config/firebase'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 
 function Sellerform() {
     const navigate=useNavigate()
@@ -18,6 +18,14 @@ function Sellerform() {
     // const allImages = [img1,img2,img3,img4]
     const[location,setLocation]=useState('')
 
+    // useEffect(() => {
+    //     navigator.geolocation.getCurrentPosition((position) => {
+    //         const { latitude, longitude } = position.coords;
+    //         setLocation(`${latitude}, ${longitude}`);
+    //     });
+    // }, []);
+
+
     const onSubmit = async () => {
         try {
     // if (!title || !description || !brand || !price || !image || !location) {
@@ -30,7 +38,7 @@ function Sellerform() {
             brand,
             price,
             image,
-            location,
+            location
         };
         const res = await postToDb(ad);
         console.log(res);
