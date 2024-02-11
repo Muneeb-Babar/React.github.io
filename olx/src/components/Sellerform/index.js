@@ -10,7 +10,12 @@ function Sellerform() {
     const[description,setDescription]=useState('')
     const[brand,setBrand]=useState('')
     const[price,setPrice]=useState('')
-    const[image,setImage]=useState()
+    const [image,setImage]=useState()
+    // const [img1 ,setimg1] = useState()
+    // const [img2 ,setimg2] = useState()
+    // const [img3 ,setimg3] = useState()
+    // const [img4 ,setimg4] = useState()
+    // const allImages = [img1,img2,img3,img4]
     const[location,setLocation]=useState('')
 
     const onSubmit = async () => {
@@ -87,10 +92,10 @@ return (
     <div className="container des4">
         <h5>UPLOAD UP TO 4 PHOTOS</h5>
         <div style={{display:'flex',rowGap:'10px',flexWrap:'wrap'}}>
-            <div className="sub"><img src="https://www.olx.com.pk/assets/iconAddPhoto_noinline.8924e2486f689a28af51da37a7bda6ec.svg"  width={100}/> <input type="file" onChange={handleImage} multiple/></div>
-            <div className="sub"><img src="https://www.olx.com.pk/assets/iconAddPhoto_noinline.8924e2486f689a28af51da37a7bda6ec.svg"   width={100}/><input type="file"/></div>
-            <div className="sub"><img src="https://www.olx.com.pk/assets/iconAddPhoto_noinline.8924e2486f689a28af51da37a7bda6ec.svg"   width={100}/><input type="file"/></div>
-            <div className="sub"><img src="https://www.olx.com.pk/assets/iconAddPhoto_noinline.8924e2486f689a28af51da37a7bda6ec.svg"   width={100}/><input type="file"/></div>
+            <div className="sub"><img src="https://www.olx.com.pk/assets/iconAddPhoto_noinline.8924e2486f689a28af51da37a7bda6ec.svg"  width={100}/> <input onChange={handleImage} type="file" name="upload"/></div>
+            <div className="sub"><img src="https://www.olx.com.pk/assets/iconAddPhoto_noinline.8924e2486f689a28af51da37a7bda6ec.svg"   width={100}/><input type="file" name="upload"/></div>
+            <div className="sub"><img src="https://www.olx.com.pk/assets/iconAddPhoto_noinline.8924e2486f689a28af51da37a7bda6ec.svg"   width={100}/><input  type="file" name="upload"/></div>
+            <div className="sub"><img src="https://www.olx.com.pk/assets/iconAddPhoto_noinline.8924e2486f689a28af51da37a7bda6ec.svg"   width={100}/><input  type="file" name="upload"/></div>
         </div>
         <p>For the cover picture we recommend using the landscape mode.</p>
     </div>

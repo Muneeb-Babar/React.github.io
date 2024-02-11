@@ -17,6 +17,7 @@ appId: "1:986217264801:web:ed5c55b76ba4fe71a322e0"
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
+const storage = getStorage();
 
 export async function LoginSetup({users,password}){
     // const auth = getAuth();
@@ -71,7 +72,7 @@ export async function getSingleAds(adId) {
 }
 export async function postToDb(ad) {
     try {
-    const storage = getStorage();
+    
     const storageRef = ref(storage, `ads/${ad.image.name}`);
       // Upload image to Firebase Storage
     await uploadBytes(storageRef, ad.image);
@@ -87,6 +88,34 @@ export async function postToDb(ad) {
     } catch (error) {
     console.error('Error posting to database:', error.message);
     }
+    // const imagesUrls = [];
+    // try {
+    //   await Promise.all(ad.allImages.map(async (image) => {
+    //     const storageRef = ref(storage, `${image.name}`);
+    //     console.log('Storage Reference:', storageRef); 
+    //     await uploadBytes(storageRef, image);
+    //     console.log('Image uploaded successfully:', image.name);
+    //     const url = await getDownloadURL(storageRef);
+    //     console.log('Download URL:', url); 
+    //     imagesUrls.push(url);
+    //   }));
+    
+    //   ad.images = imagesUrls;
+    
+    //   console.log(ad.url);
+    //   const docRef = await addDoc(collection(db, "adds"), {
+    //     title: ad.title,
+    //     price: ad.price, 
+    //     description: ad.description,
+    //     images: ad.images,
+    //     brand: ad.brand, 
+    //     location: ad.location
+    //   });
+    //   alert('Post Add Successful');
+    // } catch(error) {
+    //   console.error('Error saving images URL', error.message);
+    // }
+
 }
 
 export async function getMyAdsFromDb(uid) {

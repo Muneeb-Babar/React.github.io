@@ -3,25 +3,33 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {useParams,useNavigate,} from 'react-router-dom'
 import { useState,useEffect } from 'react'
 import {useDispatch}from 'react-redux'
-// import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 
 import { updateCart } from '../../Store/cartSlice';
 import SubFooter from '../../components/SubFooter';
 import './index.css'
 import DarkVariantExample from '../../components/Slider';
 import { getSingleAds } from '../../config/firebase';
+import MapComponent from '../../components/Map';
 
 
 function Detail(){
     const dispatch=useDispatch()
     const navigate=useNavigate()
     const [product,setProduct]=useState([])
+    // const [locations, setLocations] = useState()
 
 const { adId } = useParams();
 
 useEffect(() => {
     getSingleAd();
 }, []);
+
+// useEffect(() => {
+//     navigator.geolocation.getCurrentPosition((location) => {
+//         const { latitude, longitude } = location.coords
+//         setLocations({ latitude, longitude })
+//     })
+// }, [])
 
 const getSingleAd=async()=>{
     const res=await getSingleAds(adId)
@@ -40,6 +48,11 @@ const handleCart=()=>{
     console.log(product)
     dispatch(updateCart(product))
 }
+
+const address = {
+    latitude: 870244,
+    longitude: 1770101
+  };
 
 
     return <div>
@@ -79,7 +92,10 @@ const handleCart=()=>{
                     <h2>Location</h2>
                     <i class="fa-solid fa-location-dot"></i> <label>City Housing Society,Karachi</label>
                 </div>
-                <div><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d28955.564250745414!2d67.1775438!3d24.88278015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1707386601540!5m2!1sen!2s" width={'100%'} height="350"  loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe></div>
+                <div>
+                    <MapComponent address={address}/>
+        {/* <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14477.703975323417!2d67.1782886!3d24.88344695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1707560314474!5m2!1sen!2s" width="100%" height="500px" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
+                </div>
             </div>
         </div>
         <SubFooter/>

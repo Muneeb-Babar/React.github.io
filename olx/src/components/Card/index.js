@@ -17,6 +17,7 @@ function Cards(){
     //This ia the rigth way to Fetch data
 const getData=async () =>{
     const res=await getAllData()
+    console.log(res)
     setAds(res)
 }
     
@@ -39,7 +40,7 @@ if(!ads){
             <Card.Title>{brand}</Card.Title>
             <div style={{fontWeight:'500',fontSize:'1.2rem'}}>price :{price}$</div>
             <Card.Text>
-            {description}
+            {description}s
             </Card.Text>
         </Card.Body>
         </Card>
